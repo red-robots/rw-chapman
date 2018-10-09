@@ -98,7 +98,35 @@ $termName = get_queried_object()->name;
 </div><!-- entry content -->
 
  
-
+<section class="manufactor-list entry-content">
+    <h3 class="allcaps">Manufacturers</h3>
+    <ul>
+<?php 
+// loop through terms of the Markets Taxonomy
+        $getArgs = array(
+        'parent'       => 0,
+        'order' => 'DESC',
+        'orderby' => 'count',
+        'hide_empty'    => false,
+        'exclude' => array(5, 6)
+        );
+        // get the taxonomy we are going to loop through. 
+        $taxonomy = get_terms('markets', $getArgs);
+        // echo '<pre>';
+        // print_r($taxonomy);
+        // echo '</pre>';
+            
+    // Start the loop through the terms
+    foreach ($taxonomy as $term) { 
+          
+        // Get term link
+        $term_link = get_term_link( $term ); ?>
+            <li>
+                <a href="<?php echo $term_link; ?>"><?php echo $term->name; ?> <i class="fal fa-chevron-circle-right"></i></a>
+            </li>
+    <?php } ?>
+    </ul>
+</section>
 			
 
 		</div><!-- #content -->
