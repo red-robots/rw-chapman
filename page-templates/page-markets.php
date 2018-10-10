@@ -30,6 +30,7 @@ get_header(); ?>
 		'order' => 'DESC',
 		'orderby' => 'count',
    		'hide_empty'    => false,
+        'exclude' => array(5, 6)
 		);
 		// get the taxonomy we are going to loop through. 
 		$taxonomy = get_terms('markets', $getArgs);

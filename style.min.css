@@ -329,10 +329,9 @@ body .site{padding:0;margin-bottom:48px}
 #search-box .home{height:315px}
 #banner-inside,#box-container{width:775px;float:left}
 #banner h2{font-size:48px;margin:10px 0 20px 0}
-.boxes{width:140px;height:140px}
-.boxes a{width:140px;height:140px}
+.boxes{width:240px;height:240px}
 .boxes-home{width:245px;height:245px}
-.boxes-home a{width:100%}
+.boxes-home a,.boxes a{width:100%}
 .team-photo{width:150px;float:left;margin:0 20px 20px 0;position:relative}
 .team-content{width:500px;float:left}
 #statemap-container{display:block;width:750px;position:relative;margin:0 0 50px 0;overflow:hidden}
