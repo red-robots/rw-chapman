@@ -111,7 +111,7 @@ $termName = get_queried_object()->name;
         'exclude' => array(5, 6)
         );
         // get the taxonomy we are going to loop through. 
-        $taxonomy = get_terms('markets', $getArgs);
+        $taxonomy = get_terms('manufacturer', $getArgs);
         // echo '<pre>';
         // print_r($taxonomy);
         // echo '</pre>';

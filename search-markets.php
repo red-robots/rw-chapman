@@ -38,20 +38,27 @@ $termsResult = get_terms($taxonomy, $args);
 
 <?php //if ( !$wp_query->post_count == 1 or !$wp_query->post_count == 0 && ! is_wp_error( $termsResult ) ) : ?>
 <?php if ( !empty($termsResult)) : ?>
-	<?php  foreach ( $termsResult as $term ) { ?>
+	<?php  foreach ( $termsResult as $term ) { 
+
+		$hide = get_field('hide', $term);
+		if( $hide ) {
+			$hide = $hide[0];
+		}
+
+		?>
     
+	<?php if( $hide != 'hide') : ?> 
+	  	<div class="post">
+	       	  <div class="entry-content">
+	            <h2><?php echo $term->name ?></h2>
+	            <?php echo term_description( $term->term_id, $taxonomy ) ?>
+	            <div class="blue-arrow"><a href="<?php echo get_term_link( $term ); ?>">Read more</a></div>
+	         </div><!-- entry-content -->   
+	     </div><!-- post -->
+    <?php endif; ?>
 
-  	<div class="post">
-       	  <div class="entry-content">
-            <h2><?php echo $term->name ?></h2>
-            <?php echo term_description( $term->term_id, $taxonomy ) ?>
-            <div class="blue-arrow"><a href="<?php echo get_term_link( $term ); ?>">Read more</a></div>
-         </div><!-- entry-content -->   
-     </div><!-- post -->
      
-
-     
-<?php } // end foreach ?>
+<?php }  // end foreach  ?>
 
 <div class="clear"></div>
     <?php pagi_posts_nav(); ?>
