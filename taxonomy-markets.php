@@ -77,7 +77,7 @@ if ($wp_query->have_posts()) : ?>
     
 <div class="widget-area">
 	<?php get_template_part('inc/linecard'); ?>
-    <?php get_template_part('inc/submarkets'); ?>
+    <?php //get_template_part('inc/submarkets'); ?>
 </div><!-- widget area -->
 
 <?php get_footer(); ?>
