@@ -66,15 +66,16 @@ get_header(); ?>
     <ul>
 <?php 
 // loop through terms of the Markets Taxonomy
-        $getArgs = array(
-        'parent'       => 0,
-        'order' => 'DESC',
-        'orderby' => 'count',
-        'hide_empty'    => false,
-        'exclude' => array(5, 6)
-        );
+        // $getArgs = array(
+        // 'parent'       => 0,
+        // 'order' => 'DESC',
+        // 'orderby' => 'count',
+        // 'hide_empty'    => false,
+        // 'exclude' => array(5, 6)
+        // );
+        $theID=get_the_ID();
         // get the taxonomy we are going to loop through. 
-        $taxonomy = get_terms('manufacturer', $getArgs);
+        $taxonomy = get_the_terms($theID,'manufacturer');
         // echo '<pre>';
         // print_r($taxonomy);
         // echo '</pre>';

@@ -30,8 +30,8 @@
 					 endwhile; endif;
 					  
 					  // test
-					 /* echo '<pre>';
-					   print_r($listarray);*/
+					  // echo '<pre>';
+					  //  print_r($listarray);
 					
 						// join the array into a comma separated list
 					  $listarea = join( ", ", $listarray );
