@@ -37,7 +37,8 @@ if ($wp_query->have_posts()) : ?>
 		<h3 class="associated">Products We Sell</h3>
 		<ul class="product-list-full">
 			<?php while ($wp_query->have_posts()) : $wp_query->the_post(); 
-					$hide = get_field('hide', $term);
+					
+					$hide = get_field('hide');
 					if( $hide ) {
 						$hide = $hide[0];
 					}

@@ -61,9 +61,7 @@ get_header(); ?>
 <?php } // end foreach ?>
 </div><!-- box container page -->
 
-<section class="manufactor-list entry-content">
-    <h3 class="allcaps">Manufacturers</h3>
-    <ul>
+
 <?php 
 // loop through terms of the Markets Taxonomy
         // $getArgs = array(
@@ -73,7 +71,7 @@ get_header(); ?>
         // 'hide_empty'    => false,
         // 'exclude' => array(5, 6)
         // );
-        $theID=get_the_ID();
+        $theID = get_the_ID();
         // get the taxonomy we are going to loop through. 
         $taxonomy = get_the_terms($theID,'manufacturer');
         // echo '<pre>';
@@ -81,16 +79,23 @@ get_header(); ?>
         // echo '</pre>';
             
     // Start the loop through the terms
-    foreach ($taxonomy as $term) { 
-          
-        // Get term link
-        $term_link = get_term_link( $term ); ?>
-            <li>
-                <a href="<?php echo $term_link; ?>"><?php echo $term->name; ?> <i class="fal fa-chevron-circle-right"></i></a>
-            </li>
-    <?php } ?>
-    </ul>
-</section>
+    if( $taxonomy ) : ?>
+    <section class="manufactor-list entry-content">
+        <h3 class="allcaps">Manufacturers</h3>
+        <ul>
+        <?php 
+            foreach ($taxonomy as $term) { 
+                  
+                // Get term link
+                $term_link = get_term_link( $term ); ?>
+                    <li>
+                        <a href="<?php echo $term_link; ?>"><?php echo $term->name; ?> <i class="fal fa-chevron-circle-right"></i></a>
+                    </li>
+            <?php } ?>
+        </ul>
+    </section>
+    <?php endif; ?>
+    
 
 <div id="call-to-action">
     <div class="entry-content">
