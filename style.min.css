@@ -254,7 +254,7 @@ img#wpstats{display:block;margin:0 auto 24px}
 .team-wrapper{width:100%;position:relative}
 .team-wrapper .imgbox{width:80px;float:left}
 .team-wrapper .team-box{width:calc(48.5% - 10px);-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;position:relative;float:none;margin:5px;padding-bottom:50px;position:relative;min-width:188px;min-height:180px}
-.team-wrapper .team-box img.teamleft{float:left;margin:0;width:100%;height:auto}
+.team-wrapper .team-box img.teamleft{float:left;margin:0 0 !important;width:100%;height:auto}
 .team-wrapper .team-box-right{width:calc(100% - 90px)}
 .team-wrapper .team-contact{bottom:10px;right:10px}
 .team-wrapper .teamPhone{width:100%;float:left;margin-top:5px;padding-left:5px}
