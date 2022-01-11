@@ -242,7 +242,8 @@ add_action( 'login_enqueue_scripts', 'my_login_logo' );
 
 // Change Link
 function loginpage_custom_link() {
-	return the_permalink();
+	//return the_permalink();
+  return get_site_url();
 }
 add_filter('login_headerurl','loginpage_custom_link');
 
@@ -255,7 +256,7 @@ add_action('wp_head', 'mytheme_favicon');
 // Limit the excerpt without truncating the last word.
 // Excerpt Function
 function get_excerpt($count){
-  $permalink = get_permalink($post->ID);
+  $permalink = get_permalink();
   $excerpt = get_the_content();
   $excerpt = strip_tags($excerpt);
   $excerpt = substr($excerpt, 0, $count);

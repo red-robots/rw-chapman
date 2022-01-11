@@ -28,10 +28,11 @@
 			$sanitized =  sanitize_title_with_dashes($title);
 			// get the vcard 
 			$vcard = get_field('v_card'); 
+      $job_title = get_field("job_title");
 ?>
     
     <a class="anchor-person" id="<?php echo $sanitized; ?>"></a>
-    <div class="team-member">
+    <div class="team-member teamFullInfo">
     	<div class="team-photo">
 		<?php 
         // Get field Name
@@ -48,14 +49,21 @@
         
        <div class="team-content">
        <div class="entry-content">
-       
-        <h2><?php the_title(); ?></h2>
+        
+        <div class="teamName">
+          <h2><?php the_title(); ?></h2>
+          <?php if ($job_title) { ?>
+          <div class="jobtitle"><?php echo $job_title ?></div>
+          <?php } ?>
+        </div>
+        
+
         <div class="vcard"><a href="<?php echo $vcard; ?>">vcard</a></div>
         <?php the_field('bio'); ?>
         
        
             <h4>Market Segments</h4>
-            <div class="listregionarea"><?php //echo $listareas; ?></div>
+            <!-- <div class="listregionarea"><?php //echo $listareas; ?></div> -->
          <?php if( have_rows('market_segment_order') ): ?>
          <ul>
 				<?php while ( have_rows('market_segment_order') ) : ?>

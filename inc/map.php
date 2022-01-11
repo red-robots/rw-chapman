@@ -60,14 +60,13 @@ Click on the map to the left to see who services each area.
 	)
 ));
 if ($wp_query->have_posts()) :  ?>
-<div class="hidden-div" id="nc">
-    
+<div class="hidden-div team-wrap-outer" id="nc">
+  <div class="team-wrapper grid">
 	<?php while ($wp_query->have_posts()) :  ?>
     <?php $wp_query->the_post(); ?>	  
-    
      <?php get_template_part('inc/team-box'); ?>
-     
      <?php endwhile; ?>
+  </div>
  </div><!-- hidden div -->
 <?php endif; wp_reset_postdata(); ?> 
 

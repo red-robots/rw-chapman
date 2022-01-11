@@ -1,18 +1,21 @@
-<div class="team-box">
+<div class="team-box grid-item">
      <?php 
-        // Get field Name
         $image = get_field('picture'); 
         $url = $image['url'];
-		 $size = 'team-thumb';
+        $size = 'team-thumb';
         $thumb = $image['sizes'][ $size ];
-		// Get the title
-			$title = get_the_title() ;
-			// Put the title in dashed form
-			$sanitized =  sanitize_title_with_dashes($title);
+        $alt = $image['title'];
+        $title = get_the_title() ;
+        $sanitized =  sanitize_title_with_dashes($title);
+        $job_title = get_field("job_title");
         ?>
         <img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" class="teamleft" />
         <div class="team-box-right">
             <h3><?php the_title(); ?></h3>
+            <?php if ($job_title) { ?>
+            <div class="jobtitle"><?php echo $job_title ?></div>
+            <?php } ?>
+
             <?php if( have_rows('market_segment_order') ):
       				
 					// Create an empty
@@ -55,9 +58,9 @@
             
             <?php //endif; ?>
             
-            <div class="team-contact">
-                <a href="#<?php echo $sanitized; ?>">contact</a>
-            </div><!-- team contact -->
         </div><!-- team-box-right -->
+        <div class="team-contact">
+            <a href="#<?php echo $sanitized; ?>">contact</a>
+        </div><!-- team contact -->
         <?php //the_field('bio'); ?>
 </div><!-- team box -->

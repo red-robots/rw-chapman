@@ -76,4 +76,12 @@ get_header(); ?>
 </div><!-- widget area -->
 
 <?php //get_sidebar(); ?>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script>
+$('.grid').masonry({
+  // options
+  itemSelector: '.grid-item',
+  columnWidth: 200
+});
+</script>
 <?php get_footer(); ?>
