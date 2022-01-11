@@ -2162,6 +2162,10 @@ img.teamleft {
   position: relative;
   // display: flex;
   // flex-flow: row wrap;
+  .imgbox {
+    width: 80px;
+    float: left;
+  }
   .team-box {
     width: calc(48.5% - 10px);
     flex-direction: column;
@@ -2170,19 +2174,49 @@ img.teamleft {
     margin: 5px;
     padding-bottom: 50px;
     position: relative;
+    min-width: 188px;
+    min-height: 180px;
     img.teamleft {
       float: left;
       margin: 0 0;
-      width: 70px;
+      width: 100%;
       height: auto;
     }
   }
   .team-box-right {
-    width: calc(100% - 80px);
+    width: calc(100% - 90px);
   }
   .team-contact {
     bottom: 10px;
     right: 10px;
+  }
+  .teamPhone {
+    width: 100%;
+    float: left;
+    margin-top: 5px;
+    padding-left: 5px;
+    div {
+      display: inline-block;
+      font-size: 18px;
+      margin: 0 10px 0 0;
+      float: left;
+      a {
+        display: inline-block;
+        color: #FFF;
+        font-size: 18px;
+        transition: all ease .3s;
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+      &.phone {
+        transform: rotateY(180deg);
+        a {
+          font-size: 16px;
+        }
+      }
+    }
+
   }
 }
 
@@ -2195,6 +2229,38 @@ img.teamleft {
     .jobtitle {
       font-weight: 500;
     }
+  }
+  .imgbox {
+    width: 100%;
+    float: left;
+  }
+  .teamPhone {
+    width: 100%;
+    float: left;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding-left: 5px;
+    text-align: center;
+    a {
+      display: inline-block;
+      color: #5887c6;
+      font-size: 20px;
+      transition: all ease .3s;
+      overflow: hidden;
+      position: relative;
+      margin: 5px 5px;
+      &.phone {
+        top: -1px;
+        float: none;
+        font-size: 17px;
+        transform: rotateY(180deg);
+      }
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+      
+
   }
 }
 

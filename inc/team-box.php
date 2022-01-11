@@ -1,15 +1,37 @@
 <div class="team-box grid-item">
      <?php 
-        $image = get_field('picture'); 
-        $url = $image['url'];
         $size = 'team-thumb';
-        $thumb = $image['sizes'][ $size ];
-        $alt = $image['title'];
+        $image = get_field('picture'); 
+        $url = ( isset($image['url']) ) ? $image['url'] : '';
+        $thumb = ( isset($image['sizes']) ) ? $image['sizes'][ $size ] : '';
+        $alt = ( isset($image['title']) ) ? $image['title'] : '';
+        
         $title = get_the_title() ;
         $sanitized =  sanitize_title_with_dashes($title);
         $job_title = get_field("job_title");
+        $phone = get_field("phone");
+        $email = get_field("email");
+        $placeholder = get_bloginfo('template_url') . "/images/nophoto-1.jpg";
         ?>
-        <img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" class="teamleft" />
+        <div class="imgbox">
+          <?php if ($image) { ?>
+            <img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" class="teamleft" />
+          <?php } else { ?>
+            <img src="<?php echo $placeholder; ?>" alt="" class="nopic teamleft" />
+          <?php } ?>
+        
+          <?php if ($phone || $email) { ?>
+          <div class="teamPhone">
+            <?php if ($phone) { ?>
+              <div class="phone"><a href="tel:<?php echo format_phone_number($phone); ?>" arial-label="<?php echo $phone ?>"><i class="fas fa-phone"></i></a></div>
+            <?php } ?>
+            <?php if ($email) { ?>
+              <div class="email"><a href="mailto:<?php echo antispambot($email,1); ?>" arial-label="<?php echo antispambot($email); ?>"><i class="fas fa-envelope"></i></a></div>
+            <?php } ?>
+          </div> 
+          <?php } ?>
+        </div>
+        
         <div class="team-box-right">
             <h3><?php the_title(); ?></h3>
             <?php if ($job_title) { ?>

@@ -76,7 +76,7 @@ get_header(); ?>
 </div><!-- widget area -->
 
 <?php //get_sidebar(); ?>
-<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="<?php echo get_bloginfo('template_url') ?>/assets/js/masonry.js"></script>
 <script>
 $('.grid').masonry({
   // options

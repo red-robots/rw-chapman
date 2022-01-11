@@ -9,6 +9,7 @@
 </div>
 
 <?php
+  $placeholder = get_bloginfo('template_url') . "/images/nophoto-2.jpg";
 	$wp_query = new WP_Query();
 	$wp_query->query(array(
 	'post_type'=>'team_member',
@@ -36,14 +37,41 @@
     	<div class="team-photo">
 		<?php 
         // Get field Name
+      //   $image = get_field('picture'); 
+      //   $url = $image['url'];
+		    // $size = 'large';
+      //   $thumb = $image['sizes'][ $size ];
+
+        $size = 'large';
         $image = get_field('picture'); 
-        $url = $image['url'];
-		 $size = 'large';
-        $thumb = $image['sizes'][ $size ];
+        $url = ( isset($image['url']) ) ? $image['url'] : '';
+        $thumb = ( isset($image['sizes']) ) ? $image['sizes'][ $size ] : '';
+        $alt = ( isset($image['title']) ) ? $image['title'] : '';
+
+        $phone = get_field("phone");
+        $email = get_field("email");
+
         ?>
-        <?php if($image != '') : ?>
-        	<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" />
-        <?php endif; ?>
+
+        <div class="imgbox">
+          <?php if ($image) { ?>
+            <img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" class="profilepic" />
+          <?php } else { ?>
+            <img src="<?php echo $placeholder; ?>" alt="" class="nopic profilepic" />
+          <?php } ?>
+
+          <?php if ($phone || $email) { ?>
+          <div class="teamPhone">
+            <?php if ($phone) { ?>
+              <a href="tel:<?php echo format_phone_number($phone); ?>" class="phone" arial-label="<?php echo $phone ?>"><i class="fas fa-phone"></i></a>
+            <?php } ?>
+            <?php if ($email) { ?>
+              <a href="mailto:<?php echo antispambot($email,1); ?>" class="email" arial-label="<?php echo antispambot($email); ?>"><i class="fas fa-envelope"></i></a>
+            <?php } ?>
+          </div> 
+          <?php } ?>
+        </div>
+
         <div class="backtotop"><a href="#top">back to top</a></div>
         </div><!-- team photo -->
         

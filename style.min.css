@@ -252,13 +252,25 @@ img#wpstats{display:block;margin:0 auto 24px}
 .team-wrap-outer,.team-wrap-outer *{-webkit-box-sizing:border-box;box-sizing:border-box}
 .team-wrap-outer{width:100%}
 .team-wrapper{width:100%;position:relative}
-.team-wrapper .team-box{width:calc(48.5% - 10px);-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;position:relative;float:none;margin:5px;padding-bottom:50px;position:relative}
-.team-wrapper .team-box img.teamleft{float:left;margin:0;width:70px;height:auto}
-.team-wrapper .team-box-right{width:calc(100% - 80px)}
+.team-wrapper .imgbox{width:80px;float:left}
+.team-wrapper .team-box{width:calc(48.5% - 10px);-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;position:relative;float:none;margin:5px;padding-bottom:50px;position:relative;min-width:188px;min-height:180px}
+.team-wrapper .team-box img.teamleft{float:left;margin:0;width:100%;height:auto}
+.team-wrapper .team-box-right{width:calc(100% - 90px)}
 .team-wrapper .team-contact{bottom:10px;right:10px}
+.team-wrapper .teamPhone{width:100%;float:left;margin-top:5px;padding-left:5px}
+.team-wrapper .teamPhone div{display:inline-block;font-size:18px;margin:0 10px 0 0;float:left}
+.team-wrapper .teamPhone div a{display:inline-block;color:#fff;font-size:18px;-webkit-transition:all ease .3s;transition:all ease .3s}
+.team-wrapper .teamPhone div a:hover{opacity:.5}
+.team-wrapper .teamPhone div.phone{-webkit-transform:rotateY(180deg);transform:rotateY(180deg)}
+.team-wrapper .teamPhone div.phone a{font-size:16px}
 .teamFullInfo .teamName{margin-bottom:20px}
 .teamFullInfo .teamName h2{margin:0}
 .teamFullInfo .teamName .jobtitle{font-weight:500}
+.teamFullInfo .imgbox{width:100%;float:left}
+.teamFullInfo .teamPhone{width:100%;float:left;margin-top:5px;margin-bottom:15px;padding-left:5px;text-align:center}
+.teamFullInfo .teamPhone a{display:inline-block;color:#5887c6;font-size:20px;-webkit-transition:all ease .3s;transition:all ease .3s;overflow:hidden;position:relative;margin:5px 5px}
+.teamFullInfo .teamPhone a.phone{top:-1px;float:none;font-size:17px;-webkit-transform:rotateY(180deg);transform:rotateY(180deg)}
+.teamFullInfo .teamPhone a:hover{opacity:.5}
 @media screen and (min-width:600px){.author-avatar{float:left;margin-top:8px}
 .author-description{float:right;width:80%}
 .site{margin:0 auto;padding:20px;overflow:hidden}
