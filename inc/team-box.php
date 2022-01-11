@@ -13,13 +13,13 @@
         $email = get_field("email");
         $placeholder = get_bloginfo('template_url') . "/images/nophoto-1.jpg";
         ?>
-        <div class="imgbox">
+        <div class="imgbox" style="float:left;">
           <?php if ($image) { ?>
-            <img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" class="teamleft" />
+            <img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" class="teamleft" style="margin:0 0"/>
           <?php } else { ?>
-            <img src="<?php echo $placeholder; ?>" alt="" class="nopic teamleft" />
+            <img src="<?php echo $placeholder; ?>" alt="" class="nopic teamleft" style="margin:0 0"/>
           <?php } ?>
-        
+
           <?php if ($phone || $email) { ?>
           <div class="teamPhone">
             <?php if ($phone) { ?>
