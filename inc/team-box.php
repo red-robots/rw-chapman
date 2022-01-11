@@ -13,7 +13,7 @@
         $email = get_field("email");
         $placeholder = get_bloginfo('template_url') . "/images/nophoto-1.jpg";
         ?>
-        <div class="imgbox" style="float:left;">
+        <div class="imgbox">
           <?php if ($image) { ?>
             <img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" class="teamleft" style="margin:0 0"/>
           <?php } else { ?>
