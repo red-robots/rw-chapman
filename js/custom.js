@@ -17,17 +17,15 @@ $('.box-trigger').hover(
 );
 
 
-$(".myLink").bind("click", function() {
-    $(".hidden-div").hide();
-	// deactivate the active class for the bubble
-	$(".myLink").removeClass('active');
-    var divId= $(this).attr("divId");
-    $("#" + divId).show();
-	// activate the active class for the bubble
-	$(this).addClass('active');
-});
-
-
+// $(".myLink").bind("click", function() {
+//     $(".hidden-div").hide();
+// 	// deactivate the active class for the bubble
+// 	$(".myLink").removeClass('active');
+//     var divId= $(this).attr("divId");
+//     $("#" + divId).show();
+// 	// activate the active class for the bubble
+// 	$(this).addClass('active');
+// });
 
 
 

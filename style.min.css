@@ -172,7 +172,6 @@ li.team a{color:#fff;text-decoration:none;padding:5px 0 5px 0}
 .team-content h4{margin:0 0 0 0 !important}
 .listregionarea{margin:0 0 20px 0}
 .vcard{font-size:12px;margin:-20px 0 20px 0}
-#dc,#md,#va,#sc,#de{display:none}
 #statemap-container{display:none}
 .team-member{width:100%;margin:0 0 20px 0;position:relative;overflow:hidden}
 .entry-meta{clear:both}
@@ -271,6 +270,8 @@ img#wpstats{display:block;margin:0 auto 24px}
 .teamFullInfo .teamPhone a{display:inline-block;color:#5887c6;font-size:20px;-webkit-transition:all ease .3s;transition:all ease .3s;overflow:hidden;position:relative;margin:5px 5px}
 .teamFullInfo .teamPhone a.phone{top:-1px;float:none;font-size:17px;-webkit-transform:rotateY(180deg);transform:rotateY(180deg)}
 .teamFullInfo .teamPhone a:hover{opacity:.5}
+.team-by-state{display:none}
+.team-by-state.active{display:block}
 @media screen and (min-width:600px){.author-avatar{float:left;margin-top:8px}
 .author-description{float:right;width:80%}
 .site{margin:0 auto;padding:20px;overflow:hidden}

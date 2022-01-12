@@ -78,10 +78,29 @@ get_header(); ?>
 <?php //get_sidebar(); ?>
 <script src="<?php echo get_bloginfo('template_url') ?>/assets/js/masonry.js"></script>
 <script>
-$('.grid').masonry({
-  // options
-  itemSelector: '.grid-item',
-  columnWidth: 200
+jQuery(document).ready(function ($) {
+  $('.active .grid').masonry({
+    itemSelector: '.grid-item',
+    columnWidth: 200
+  });
+
+  $(".myLink").on("click", function(e) {
+    e.preventDefault();
+    var id = $(this).attr('divId');
+    $(this).addClass('active');
+    $(".myLink").not( $(this) ).removeClass('active');
+    var active_team = ".team-by-state#"+id;
+    $(active_team).addClass('active');
+    $(".team-by-state").not(active_team).removeClass('active');
+
+    /* Masonry destroy and initialize again */
+    $(".team-by-state").not('active').find('.grid').masonry('destroy');
+    $(active_team + ' .grid').masonry({
+      itemSelector: '.grid-item',
+      columnWidth: 200
+    });
+  });
+
 });
 </script>
 <?php get_footer(); ?>

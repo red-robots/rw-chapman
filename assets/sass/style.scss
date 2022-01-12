@@ -1094,7 +1094,7 @@ li.team a {
 	font-size: 12px;
 	margin: -20px 0 20px 0;	
 }
-#dc, #md, #va, #sc, /*#nc,*/ #de {display:none}
+// #dc, #md, #va, #sc, #nc, #de {display:none}
 #statemap-container {display:none}
 .team-member {
 	width: 100%;
@@ -2261,5 +2261,13 @@ img.teamleft {
 
   }
 }
+
+.team-by-state {
+  display: none;
+  &.active {
+    display: block;
+  }
+}
+
 
 
