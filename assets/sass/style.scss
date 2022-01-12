@@ -1092,7 +1092,9 @@ li.team a {
 }
 .vcard {
 	font-size: 12px;
-	margin: -20px 0 20px 0;	
+  position: relative;
+  top: -10px;
+	// margin: -20px 0 20px 0;
 }
 // #dc, #md, #va, #sc, #nc, #de {display:none}
 #statemap-container {display:none}
@@ -2220,7 +2222,7 @@ img.teamleft {
 
 .teamFullInfo {
   .teamName {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     h2 {
       margin: 0 0;
     }

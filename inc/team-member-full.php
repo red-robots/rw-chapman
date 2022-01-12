@@ -85,8 +85,6 @@
           <?php } ?>
         </div>
         
-
-        <div class="vcard"><a href="<?php echo $vcard; ?>">vcard</a></div>
         <?php the_field('bio'); ?>
         
        
@@ -115,20 +113,24 @@
             
             
             <?php
-					$mterms = get_the_terms( $post->ID, 'rep_area' );
-					if ( $mterms && ! is_wp_error( $mterms ) ) : 
-					$regions = array();
+  					$mterms = get_the_terms( $post->ID, 'rep_area' );
+  					if ( $mterms && ! is_wp_error( $mterms ) ) : 
+    					$regions = array();
 
-						foreach ( $mterms as $mterm ) {
-							$regions[] = $mterm->name;
-						}
+  						foreach ( $mterms as $mterm ) {
+  							$regions[] = $mterm->name;
+  						}
 										
-					$listregions = join( ", ", $regions );
-?>
+					    $listregions = join( ", ", $regions );
+            ?>
             <h4>Market Regions</h4>
             <div class="listregionarea"><?php echo $listregions; ?></div>
             <?php endif; ?>
-        
+
+
+          <?php if ($vcard) { ?>
+            <div class="vcard"><a href="<?php echo $vcard; ?>">vcard</a></div>
+          <?php } ?>
         
        </div><!-- entry content -->
        </div><!-- team content -->

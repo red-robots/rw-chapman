@@ -171,7 +171,7 @@ li.team a{color:#fff;text-decoration:none;padding:5px 0 5px 0}
 .team-content{width:500px;float:left}
 .team-content h4{margin:0 0 0 0 !important}
 .listregionarea{margin:0 0 20px 0}
-.vcard{font-size:12px;margin:-20px 0 20px 0}
+.vcard{font-size:12px;position:relative;top:-10px}
 #statemap-container{display:none}
 .team-member{width:100%;margin:0 0 20px 0;position:relative;overflow:hidden}
 .entry-meta{clear:both}
@@ -262,7 +262,7 @@ img#wpstats{display:block;margin:0 auto 24px}
 .team-wrapper .teamPhone div a:hover{opacity:.5}
 .team-wrapper .teamPhone div.phone{-webkit-transform:rotateY(180deg);transform:rotateY(180deg)}
 .team-wrapper .teamPhone div.phone a{font-size:16px}
-.teamFullInfo .teamName{margin-bottom:20px}
+.teamFullInfo .teamName{margin-bottom:10px}
 .teamFullInfo .teamName h2{margin:0}
 .teamFullInfo .teamName .jobtitle{font-weight:500}
 .teamFullInfo .imgbox{width:100%;float:left}
